@@ -7,6 +7,9 @@
   --third-background: #f5f4fa;
   --logo-color: #000000;
   --border-header: #ececec;
+  --figcaption-portfolio: #eeeeee;
+  --footer-contact: rgba(255, 255, 255, 0.6);
+  --color-social: #afb1b8;
 }
 body {
   font-family: "Roboto", sans-serif;
@@ -40,6 +43,10 @@ body {
 .contact:hover {
   color: var(--web-color);
 }
+.contact:focus,
+.contact:hover {
+  fill: var(--web-color);
+}
 
 .contact-footer:focus,
 .contact-footer:hover {
@@ -56,16 +63,24 @@ body {
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
+  width: 696px;
   color: var(--first-background);
-  margin: 0px;
-  align-items: center;
-  padding: 200px;
-  padding-bottom: 40px;
 }
 .section1 {
+  display: flex;
   background-color: var(--second-background);
+  height: 600px;
+  align-items: center;
   text-align: center;
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.6)
+    ),
+    url("./../Images/img-overlay.jpg");
+  background-position: center;
+  background-size: cover;
 }
+
 .service-button:hover,
 .service-button:focus {
   color: var(--first-background);
@@ -94,26 +109,32 @@ body {
   color: var(--first-background);
   cursor: pointer;
   border-radius: 4px;
-  padding: 10px 41px 10px 42px;
-  margin-bottom: 200px;
+  border: none;
+  width: 200px;
+  height: 50px;
 }
 .footer {
   background: var(--second-background);
   color: var(--first-background);
   padding: 60px;
 }
+.footer-parent {
+  display: flex;
+}
+
 .contact-footer {
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--footer-contact);
   text-decoration: none;
   font-style: normal;
   line-height: 1.71;
   margin-top: 9px;
 }
 .street-footer {
+  display: block;
   font-style: normal;
   font-size: 14px;
   line-height: 1.71;
-  margin-top: 20px;
+  margin-top: 20;
 }
 .section4 {
   background-color: var(--third-background);
@@ -179,28 +200,26 @@ body {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
-  margin-top: 94px;
+  margin-top: 30px;
   margin-bottom: 10px;
 }
 header {
   border-bottom: var(--border-header) 1px solid;
 }
 .container {
-  width: 1200px;
-  margin: 0 auto;
+  max-width: 1200px;
+  margin: 0px auto;
 }
 
 .header-parent {
   display: flex;
   width: 1200px;
+  height: 80px;
   align-items: center;
-  margin-top: 24px;
-  padding-bottom: 25px;
   justify-content: space-between;
 }
 .navig {
   flex-grow: 1;
-  padding-left: 93px;
 }
 
 .nav-manu {
@@ -215,11 +234,13 @@ header {
   width: 295px;
   justify-content: space-between;
   list-style: none;
+  padding-left: 0px;
 }
 .card-set {
   display: flex;
   list-style: none;
   gap: 30px;
+  margin-top: 94px;
 }
 .card {
   flex-basis: calc((100 - 3 * 30px) / 4);
@@ -234,14 +255,12 @@ header {
   list-style: none;
   justify-content: center;
   gap: 30px;
-  margin-bottom: 94px;
-  margin-top: 50px;
 }
 .border-team {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
-  background: #ffffff;
+  background: var(--first-background);
 }
 .team-figure {
   width: 270px;
@@ -255,16 +274,15 @@ header {
   list-style: none;
   justify-content: center;
   gap: 8px;
-  margin: 94px;
-  margin-bottom: 50px;
+  padding-top: 94px;
 }
+
 .portfolio-img {
   display: flex;
   list-style: none;
   flex-wrap: wrap;
   padding: 0;
   gap: 30px;
-  margin-top: 0px;
   margin-bottom: 94px;
 }
 .portfolio-figure {
@@ -272,10 +290,101 @@ header {
 }
 .portfolio-figc {
   padding: 20px;
-  border-right: 1px solid #eeeeee;
-  border-left: 1px solid #eeeeee;
-  border-bottom: 1px solid #eeeeee;
+  border-right: 1px solid var(--figcaption-portfolio);
+  border-left: 1px solid var(--figcaption-portfolio);
+  border-bottom: 1px solid var(--figcaption-portfolio);
 }
 img {
   display: block;
+}
+.icon-mail-phon {
+  fill: var(--contact-color);
+}
+.icons {
+  all: unset;
+  display: flex;
+  justify-content: center;
+  background-color: var(--third-background);
+  padding: 25px 100px;
+  margin-bottom: 30px;
+}
+.social-list {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin-inline: 32px;
+  margin-bottom: 30px;
+  padding-left: 0px;
+}
+.social-icon {
+  display: flex;
+  width: 20px;
+  height: 20px;
+  fill: var(--color-social);
+}
+.social-list:hover,
+.social-list:focus {
+  background-color: var(--web-color);
+}
+.our-clients-section {
+  background-color: var(--first-background);
+  padding-bottom: 94px;
+  text-align: center;
+  margin-top: 94px;
+}
+.our-clients-parent {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.clients-icon {
+  display: flex;
+  width: 170px;
+  height: 92px;
+  align-items: center;
+  justify-content: center;
+  fill: var(--color-social);
+  border: 1px solid var(--color-social);
+  border-radius: 4px;
+}
+
+.clients-icon:hover,
+.clients-icon:focus {
+  border-color: var(--web-color);
+  cursor: pointer;
+}
+
+.clients-icon:hover,
+.clients-icon:focus {
+  fill: var(--web-color);
+}
+
+.join-us {
+  font-size: 14px;
+  line-height: 1.14;
+  color: var(--first-background);
+  margin-left: 70px;
+  margin-top: 18px;
+}
+.social-icons {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  padding-left: 0px;
+}
+.social-icons-child {
+  fill: var(--first-background);
+  width: 20px;
+  height: 20px;
+}
+.social-icons-parent {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.1);
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
 }
