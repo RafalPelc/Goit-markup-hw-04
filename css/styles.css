@@ -288,6 +288,12 @@ header {
 .portfolio-figure {
   margin: 0;
 }
+.portfolio-figure:hover,
+.portfolio-figure:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+  cursor: pointer;
+}
 .portfolio-figc {
   padding: 20px;
   border-right: 1px solid var(--figcaption-portfolio);
@@ -404,4 +410,5 @@ a.social-item:focus svg {
 .social-icons-parent:hover,
 .social-icons-parent:focus {
   background-color: var(--web-color);
+  cursor: pointer;
 }
